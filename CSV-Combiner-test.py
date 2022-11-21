@@ -11,7 +11,7 @@ class CombineTests(unittest.TestCase):
         self.assertRaises(File_not_exist, combineCSV, ["./fixtures/accessories.csv","./fixtures/badshi.csv"])
 
     def test_different_col(self):
-        self.assertRaises(Diff_col_excep, combineCSV, ["./fixtures/accessories.csv","./fixtures/badshit.csv"])
+        self.assertRaises(Diff_col_excep, combineCSV, ["./fixtures/accessories.csv","./fixtures/badTest.csv"])
         # test reutrn file_header&file_content: compare string
         # test "cannot open file exception"
       
