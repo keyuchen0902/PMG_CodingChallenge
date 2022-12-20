@@ -20,7 +20,8 @@ class File_not_exist(Exception):
     def __str__(self):
         return(repr(self.value))
 
-
+#改进方法：写一个方法首先check文件大小，如果太大就拆成小块的文件
+#此函数作用是读取每个csv文件的内容，第一行是header，我们要添加一个新的列叫filename，之后每行都是内容，添加至content，注意要添加换行符。
 def handleFile(filename):
     fileHeader = ""
     fileContent = ""
@@ -40,7 +41,7 @@ def handleFile(filename):
     except:
         raise File_not_exist("Can't open file!")
 
-
+#该函数是合并两个列相同的文件到一起，分别处理两个文件，在处理文件时，通过上述函数拿到header和content，分别添加至合并后的header和content
 def combineCSV(filenames):
     # Setup output
     mergedCsv = ""
